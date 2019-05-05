@@ -1,0 +1,15 @@
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: ideal-consumer-group  #默认组id  后面会配置多个消费者组
+      auto-offset-reset: earliest
+      enable-auto-commit: true        #关闭自动提交 改由spring-kafka提交
+      auto-commit-interval: 20000
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      #批量消费 一次接收的最大数量
+      #max-poll-records: 20
+server:
+  port: 8080
+debug: true
