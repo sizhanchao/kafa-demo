@@ -12,4 +12,3 @@ spring:
       #max-poll-records: 20
 server:
   port: 8080
-debug: true

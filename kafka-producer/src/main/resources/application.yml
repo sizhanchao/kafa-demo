@@ -9,4 +9,3 @@ spring:
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
 server:
   port: 9999
-debug: true

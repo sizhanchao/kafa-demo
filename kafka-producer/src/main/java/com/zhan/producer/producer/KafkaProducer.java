@@ -5,6 +5,7 @@ import com.zhan.producer.bean.Message;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
@@ -18,6 +19,8 @@ public class KafkaProducer {
     private KafkaTemplate<String, String> kafkaTemplate;
 
     //发送消息方法
+    @Scheduled(cron = "*/2 * * * * ?")
+//    @Scheduled(fixedRate = 5000)
     public void send() {
         Message message = new Message();
         message.setId(System.currentTimeMillis());
